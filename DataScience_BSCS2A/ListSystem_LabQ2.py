@@ -21,19 +21,41 @@ while (True):
                 else:
                     print(list)
             case "add":
-                print("Items added.")
+                if len(request) < 2 or request[1] == "":
+                    print("ERROR! Added elements cannot be empty.")
+                else:
+                    tmp = request[1].split(",")
 
-                tmp = request[1].split(",")
-                list.extend(tmp)
+                    if any(item == "" for item in tmp):
+                        print("ERROR! Please input valid elements.")
+                    else:
+                        list.extend(tmp)
+                        print("Items added.")
+
             case "swp":
                 if not list:
                     print("CAN'T SWAP! List is empty.")
                 else:
                     tmp = request[1].split(",")
-                    num1 = list.index(tmp[0])
-                    num2 = list.index(tmp[1])
+                    # num1 = list.index(tmp[0])
+                    # num2 = list.index(tmp[1])
 
-                    list[num1], list[num2] = list[num2], list[num1]
+                    # list[num1], list[num2] = list[num2], list[num1]
+                    # the first method i tried
+
+                    num1 = tmp[0]
+                    num2 = tmp[1]
+
+                    if not num1 in list or not num2 in list:
+                         print("ERROR: NOT FOUND. Please find/add elements to swap.")
+                    else:
+                        for i in range(len(list)):
+                            if list[i] == num1:
+                                list[i] = num2
+                            elif list[i] == num2:
+                                list[i] = num1
+
+                        print("Elements swapped!")
             case "dup":
                 if not list:
                     print("List is empty. Please add to check for duplicates.")
