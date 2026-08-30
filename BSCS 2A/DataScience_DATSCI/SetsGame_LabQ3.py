@@ -2,6 +2,7 @@ import random
 
 set1 = set()
 set2 = set()
+tmp = set() # elem set storage, this is where the user will answer
 given_question = ""
 
 print("-- SETS GAME! --")
@@ -22,12 +23,13 @@ while True:
 
 ## this is for generating sets
 for i in range(questions):
+    print("")
     set_length = random.randint(0, 10) ## set length
     # the LC version
     set1 = {random.randint(1,11) for n in range(set_length + 1)}
     set2 = {random.randint(1,11) for n in range(set_length + 1)}
 
-    set_question = random.randint(1, 4) ## union, intersection, diff. or symm. diff.?
+    set_question = random.randint(1, 4) ## union, intersection, diff. or symm. diff.
     match(set_question):
         case 1: ## UNION
             given_question = "UNION."
@@ -49,4 +51,12 @@ for i in range(questions):
     print(set1)
     print(set2)
 
-    test = int(input("Enter input here: "))
+    user = input("Enter input here: ")
+
+    tmp = {int(x) for x in user.split(",")}
+
+    if tmp == answer:
+        print("CORRECT.")
+    else:
+        print("INCORRECT.")
+    print("The answer is:", answer)
