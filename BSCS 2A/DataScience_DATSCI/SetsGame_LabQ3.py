@@ -3,7 +3,7 @@ import random
 set1 = set()
 set2 = set()
 tmp = set() # elem set storage, this is where the user will answer
-given_question = ""
+given_question = "" # to identify which set operations it is
 
 print("-- SETS GAME! --")
 
