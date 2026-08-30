@@ -19,7 +19,7 @@ while True:
             print("Try again! Number of questions must be greater than 1.")
             continue
     else:
-        print("Sorry! Please enter a valid integer.")    
+        print("Sorry! Please enter a valid integer.")  
 
 ## this is for generating sets
 for i in range(questions):
