@@ -53,10 +53,18 @@ for i in range(questions):
 
     user = input("Enter input here: ")
 
-    tmp = {int(x) for x in user.split(",")}
+    if user.strip() == "":
+        print("INCORRECT: Answer cannot be empty.")
 
-    if tmp == answer:
-        print("CORRECT.")
+    elif any(char.isalpha() for char in user):
+        print("INCORRECT: Letters are not valid elements.")
+
     else:
-        print("INCORRECT.")
-    print("The answer is:", answer)
+        tmp = {int(x.strip()) for x in user.split(",")}
+
+        if tmp == answer:
+            print("CORRECT.")
+        else:
+            print("INCORRECT.")
+
+        print("The answer is:", answer)
