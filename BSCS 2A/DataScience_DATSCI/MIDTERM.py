@@ -26,7 +26,10 @@ matrix = np.zeros((6, 20), dtype = str)
 time.sleep(1)
 for i in range(20):
     matrix[0, i] = "S"
-    matrix[0, i-1] = ""
+    matrix[0, i-1] = "S"
+    matrix[0, i-2] = "S"
+    matrix[0, i-3] = "S"
+    matrix[0, i-4] = ""
     print(matrix)
     time.sleep(0.1)
 ## LETTER S FOR SAZON
