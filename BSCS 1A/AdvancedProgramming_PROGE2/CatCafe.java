@@ -2,7 +2,7 @@ import java.util.Scanner;
 import javax.swing.*;
 
 
-public class Main {
+public class CatCafe {
    public static int buyDrink(int stickers, int amount){
        int currentStickers = stickers + amount;
        return currentStickers;

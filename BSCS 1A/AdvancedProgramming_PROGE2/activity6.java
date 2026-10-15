@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lim_activity6 {
+public class activity6 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
